@@ -5,44 +5,47 @@
     width: 100%;
     padding: 0;
     margin: 0;
-    
+    text-wrap:balance;
 }
 
 .title-section{
-    font-size: clamp(12px,1vw,18px);
+    font-size: clamp(14px,1vw,18px);
     text-align: center;
     margin-top: 5%;
 }
 
 .title-section-title{
-    font-size: clamp(12px,1.5vw,18px);
+    font-size: clamp(16px,5vw,30px);
 }
 
 .content-section{
-    font-size: clamp(12px,1vw,18px);
+    font-size: clamp(14px,1vw,18px);
     display: flex;
     width: 100%;
     margin-top: 2.5%;
 }
 
-
 .news-cards-section{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-left: 2.5%;
     width: 70%;
 }
 
 .news-card{
     border: 1px solid gray;
     border-radius: 2%;
-    box-shadow: 0 1px 1px 1 ;
+    box-shadow: -1px 1.5px 4px 0.1px ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 5%;
-    width: 40%;
-    
+    width: 45%;
+}
+
+.news-card:hover{
+     box-shadow: -1px 3px 10px 1px;
 }
 
 .news-card-figure{
@@ -73,24 +76,25 @@
 }
 
 .news-card-btn{
-    font-size: clamp(12px,1vw,18px);
+    font-size: clamp(14px,1vw,18px);
     font-weight: bold;
     color: rgb(0, 175, 175);
     border: none;
     background: none;
     text-align: left;
+    width: fit-content;
 }
 
 .news-card-btn:hover{
     color: blue;
+    cursor: pointer;
 }
 
 .side-bar-section{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-right: 2.5%;
-    gap: 5%;
+    gap: 2.5%;
     width: 30%;
 }
 
@@ -115,6 +119,13 @@
 
 .side-bar-section-search-div{
     width: 50%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.search-div-title{
+    text-wrap: nowrap;
 }
 
 .search-div-input{
@@ -122,25 +133,60 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    font-size: clamp(12px,1vw,18px);
+    font-size: clamp(14px,1vw,18px);
     padding: 5% 2.5% 5% 2.5% ;
+    margin-top: 2.5%;
     border: 1px solid gray;
     border-radius: 5px;
-    
 }
 
 .search-div-input button{
     width: 10%;
+    height: 20px;
     min-width: 18px;
-    min-height: 15px; 
+    min-height: 15px;
+    overflow: visible; 
     background-image: url('./assets/icons/lupa.png');
-    background-size:cover;
-    background-repeat: no-repeat ;
+    background-size:contain;
+    background-repeat: no-repeat;
 }
 
+.search-div-input button:hover{
+    cursor: pointer;
+    background-size: 120%;
+}   
 
 .search-div-input input,button{
     border: none;
     outline: none;
     background: none;
+}
+
+@media (max-width: 600px) {
+    .news-card{
+        width: 80%;
+    }
+
+    .news-cards-section{
+        width: 60%;
+    }
+
+    .side-bar-section{
+        width: 40%;
+        gap: 1%;
+    }
+
+    .side-bar-section-category-div{
+        width: 80%;
+    }
+
+    .side-bar-section-search-div{
+        width: 80%;
+    }
+}
+
+@media (max-width: 880px) {
+    .search-div-title{
+        text-wrap: wrap;
+    }
 }
